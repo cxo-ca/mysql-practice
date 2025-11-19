@@ -1,5 +1,3 @@
-# mysql-practice
-
 # MySQL 강의 실습 정리
 
 MySQL Workbench를 사용해서 강의 실습한 내용을 정리한 레포지토리입니다.
