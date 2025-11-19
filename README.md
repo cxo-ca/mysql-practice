@@ -4,8 +4,6 @@ MySQL Workbench를 사용해서 강의 실습한 내용을 정리한 레포지�
 
 ## Chapter 02: 데이터 CRUD
 
-파일: `chapter02_crud.sql`
-
 포함 내용:
 
 - 데이터베이스 생성/삭제
