@@ -121,7 +121,7 @@ SELECT * FROM burgers;
 
 ```sql
 /*
- * ch02: 셀프체크
+ * Chapter 02 Self Check
  */
 
 -- 1: starbuuks DB를 생성하고 진입
