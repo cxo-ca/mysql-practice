@@ -103,7 +103,7 @@ DESC burgers;
 SELECT * FROM burgers;
 ```
 
-## ✏️ ch02 셀프 체크(Self Check)
+## ✏️ Chapter 02 셀프 체크(Self Check)
 
 `starbuuks` 데이터베이스를 사용해서 CRUD를 한 번 더 연습하는 셀프 체크 문제입니다.
 
