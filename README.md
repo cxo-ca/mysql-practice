@@ -1,166 +1,73 @@
-# MySQL 강의 실습 정리
+# MySQL Practice – 강의 실습 정리
 
-MySQL Workbench를 사용해서 강의 실습한 내용을 정리한 레포지토리입니다.
+MySQL 강의를 들으면서 실습한 내용을 **챕터별로 정리**한 저장소입니다.  
+각 챕터는 `docs/` 폴더 아래 마크다운 문서 하나로 관리하며, 실습 코드와 설명, 셀프 체크 문제를 함께 담고 있습니다.
 
-## Chapter 02: 데이터 CRUD
+---
 
-포함 내용:
+## 📚 챕터 구성
 
-- 데이터베이스 생성/삭제
-  - `SHOW DATABASES;`
-  - `CREATE DATABASE mapdonalds;`
-  - `USE mapdonalds;`
-  - `DROP DATABASE mapdonalds;`
+> 2장은 **데이터 CRUD**, 3장은 **데이터 필터링**, 4장은 **데이터 집계**를 다룹니다.
 
-- 테이블 생성
-  - `CREATE TABLE burgers (...)`
+- [CH02 – 데이터 CRUD](docs/ch02_crud.md)  
+  - `CREATE DATABASE / DROP DATABASE`
+  - 테이블 생성 (`CREATE TABLE`)
+  - 데이터 삽입 (`INSERT`)
+  - 데이터 조회 (`SELECT`)
+  - 데이터 수정 (`UPDATE`)
+  - 데이터 삭제 (`DELETE`)
+  - 테이블 삭제 (`DROP TABLE`)
+  - 스타벅스(`starbuuks`) 예제를 활용한 셀프 체크
 
-- 데이터 삽입 (INSERT)
-  - 단일 데이터 삽입
-  - 다중 데이터 삽입
+- [CH03 – 데이터 필터링](docs/ch03_filtering.md) _(작성 예정)_  
+  - `WHERE` 절로 행 필터링
+  - 비교 연산자 (`=`, `!=`, `>`, `<`, `>=`, `<=`)
+  - 논리 연산자 (`AND`, `OR`, `NOT`)
+  - `BETWEEN`, `IN`, `LIKE`를 활용한 조건 지정
+  - 정렬 (`ORDER BY`)과 결과 제한 (`LIMIT`)
+  - `NULL` 값 처리
 
-- 데이터 조회 (SELECT)
-  - 전체 컬럼 조회
-  - 특정 컬럼(name, price) 조회
+- [CH04 – 데이터 집계](docs/ch04_aggregation.md) _(작성 예정)_  
+  - 집계 함수: `COUNT`, `SUM`, `AVG`, `MIN`, `MAX`
+  - `GROUP BY`를 이용한 그룹별 집계
+  - `HAVING` 절로 집계 결과 필터링
+  - 그룹별 정렬 및 실전 예제
+  - (필요시) 중첩 집계, 다중 컬럼 그룹화
 
-- 데이터 수정 (UPDATE)
-  - 전체 price 변경
-  - 특정 id(기본키)를 이용한 가격 변경
+---
 
-- 데이터 삭제 (DELETE)
-  - 특정 id의 레코드 삭제
+## 🛠 사용 환경 (Environment)
 
-- 테이블 삭제 (DROP TABLE)
-  - `DROP TABLE burgers;`
+- **DBMS**: MySQL  
+- **툴**: MySQL Workbench
 
+> 모든 예제는 MySQL Workbench 기준으로 작성되었습니다.
 
-```sql
-/*********************
-Chapter 02 : 데이터 CRUD
-**********************/
-SHOW DATABASES;              -- DB 목록 조회
-CREATE DATABASE mapdonalds;  -- DB 생성
-USE mapdonalds;              -- DB 진입
-SELECT DATABASE();           -- 현재 사용중인 DB
-DROP DATABASE mapdonalds;    -- DB 삭제
+---
 
--- 테이블 생성
-CREATE TABLE burgers(
-    id      INTEGER,
-    name    VARCHAR(50),
-    price   INTEGER,
-    gram    INTEGER,
-    kcal    INTEGER,
-    protein INTEGER,
-    PRIMARY KEY(id)
-);
+## 🚀 실습 방법 (How to Use)
 
--- 테이블 구조 조회
-DESC burgers;
+1. 이 레포지토리를 기준으로 보고 싶은 **챕터 문서**를 연다.  
+   - 예: `docs/ch02_crud.md`
+2. MySQL Workbench에서 **새 쿼리 탭**을 연다.
+3. 문서에 있는 SQL 블록을 **위에서부터 복사해서 붙여넣은 뒤**,  
+   블록 단위로 선택해서 실행한다.  
+   - 실행 단축키: `Ctrl + Enter` (Windows), `Cmd + Enter` (macOS)
+4. 셀프 체크 섹션이 있는 챕터는  
+   - 먼저 **문제 요구 사항만 보고 직접 쿼리를 작성해본 뒤**,  
+   - 아래의 정답 스크립트와 비교하며 복습한다.
 
--- 단일 데이터 삽입
-INSERT INTO burgers(id, name, price, gram, kcal, protein)
-VALUES(1, '빅맨', 5300, 223, 583, 27);
+---
 
--- 데이터 조회
-SELECT *   -- 모든 컬럼을 조회
-FROM burgers; -- 버거 테이블에서
+## ✍️ 정리 방식
 
--- 다중 데이터 삽입
-INSERT INTO burgers(id, name, price, gram, kcal, protein)
-VALUES
-    (2, '베이컨 틈메이러 디럭스', 6200, 242, 545, 27),
-    (3, '맨스파이시 상해 버거', 5300, 235, 494, 20),
-    (4, '슈비두밥 버거', 6200, 269, 563, 21),
-    (5, '더블 쿼터파운드 치즈', 7700, 275, 770, 50);
+각 챕터 문서는 공통적으로 다음 구조를 따릅니다.
 
--- 데이터 조회
-SELECT name, price  -- 이름, 가격 컬럼을 조회
-FROM burgers;       -- 버거 테이블에서
+- **챕터 개요**: 이 챕터에서 다루는 개념과 목표
+- **실습용 DB / 테이블 스키마**: 어떤 테이블을 어떻게 만드는지
+- **핵심 쿼리 예제**: 수업에서 다룬 문법을 중심으로 정리
+- **셀프 체크(Self Check)**: 스스로 풀어볼 수 있는 작은 문제
+- **전체 스크립트(Full Script)**: 처음부터 끝까지 실행 가능한 SQL 모음
 
--- 데이터 수정
-UPDATE burgers
-SET price = 1000;
+이 저장소는 **“수업 들으면서 그냥 지나가지 않고, 내가 손으로 친 SQL과 개념을 남겨두는 노트”**를 목표로 합니다.
 
--- 안전모드 해제/설정
-SET SQL_SAFE_UPDATES = 0; -- 0 : 해제, 1 : 설정
-
--- 전체 버거 조회
-SELECT * FROM burgers;
-
--- 빅맨 버거만 500원으로 변경
-UPDATE burgers
-SET price = 500
-WHERE id = 1; -- 특정 대상값 변경시, 조건은 반드시 기본키를 사용
-
--- id가 4인 버거를 삭제
-DELETE FROM burgers
-WHERE id = 4;
-
--- 전체 테이블 삭제: burgers
-DROP TABLE burgers;
-DESC burgers;
-SELECT * FROM burgers;
-```
-
-## ✏️ Chapter 02 Self Check
-
-`starbuuks` 데이터베이스를 사용해서 CRUD를 한 번 더 연습하는 셀프 체크 문제입니다.
-
-### 요구 사항
-
-1. `starbuuks` DB 생성 및 진입  
-2. `coffees` 테이블 생성 (`id`, `name`, `price`)  
-3. 커피 5종 데이터 한 번에 INSERT  
-4. 모든 커피 이름 조회  
-5. 카푸치노 가격 200원 인상  
-6. 콜드브루 삭제  
-7. 최종 커피 데이터 전체 조회  
-
-### 풀이 스크립트
-
-```sql
-/*
- * Chapter 02 Self Check
- */
-
--- 1: starbuuks DB를 생성하고 진입
-CREATE DATABASE starbuuks;
-USE starbuuks;
-SELECT DATABASE();
-
--- 2: coffees 테이블 생성(id, name, price)
-CREATE TABLE coffees(
-    id    INTEGER,
-    name  VARCHAR(50),
-    price INTEGER,
-    PRIMARY KEY(id)
-);
-
-DESC coffees;
-
--- 3: 모든 데이터 삽입
-INSERT INTO coffees(id, name, price)
-VALUES
-    (1, '아메리카노', 3800),
-    (2, '카페라떼', 4000),
-    (3, '콜드브루', 3500),
-    (4, '카페모카', 4500),
-    (5, '카푸치노', 5000);
-
--- 4: 모든 커피 테이블의 이름 조회
-SELECT name
-FROM coffees;
-
--- 5: 카푸치노 200원 인상
-UPDATE coffees
-SET price = price + 200
-WHERE id = 5;
-
--- 6: 콜드브루 삭제
-DELETE FROM coffees
-WHERE id = 3;
-
--- 7: 모든 커피 데이터 조회
-SELECT * FROM coffees;
-```
