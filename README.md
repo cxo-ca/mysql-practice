@@ -38,7 +38,7 @@ MySQL 강의를 들으면서 실습한 내용을 **챕터별로 정리**한 저�
 
 ## 🛠 사용 환경 (Environment)
 
-- **DBMS**: MySQL  
+- **DBMS**: MySQL
 - **툴**: MySQL Workbench
 
 > 모든 예제는 MySQL Workbench 기준으로 작성되었습니다.
