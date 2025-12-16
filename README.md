@@ -27,7 +27,7 @@ MySQL 강의를 들으면서 실습한 내용을 **챕터별로 정리**한 저�
   - 정렬 (`ORDER BY`)과 결과 제한 (`LIMIT`)
   - `NULL` 값 처리
 
-- [CH04 – 데이터 집계](docs/ch04_aggregation.md) _(작성 예정)_  
+- [CH04 – 데이터 집계](docs/ch04_aggregation.md) _(작성 예정)_ 
   - 집계 함수: `COUNT`, `SUM`, `AVG`, `MIN`, `MAX`
   - `GROUP BY`를 이용한 그룹별 집계
   - `HAVING` 절로 집계 결과 필터링
