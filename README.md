@@ -31,7 +31,7 @@ MySQL 강의를 들으면서 실습한 내용을 챕터별로 정리한 저장�
   - 셀프체크  
     - 직접 조건을 설계해서 원하는 데이터만 조회해 보는 연습 문제
 
-- [CH04 – 데이터 집계](docs/ch04_aggregation.md) _(작성 예정)_  
+- [CH04 – 데이터 집계](docs/ch04_aggregation.md) _(작성 예정)_ 
   - 집계 함수: `COUNT`, `SUM`, `AVG`, `MIN`, `MAX`
   - `GROUP BY`를 이용한 그룹별 집계
   - `HAVING` 절로 집계 결과 필터링
