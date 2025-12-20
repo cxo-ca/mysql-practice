@@ -21,7 +21,7 @@
 > 실습용 테이블과 예제 쿼리를 정리하는 섹션입니다. 
 > - 실습용 DB/테이블 생성 예시  
 > - WHERE + 비교 연산자 실습  
-> - AND / OR / NOT 논리 연산자 실습  
+> - AND / OR / NOT 논리 연산자 실습 
 > - BETWEEN / IN / LIKE / ORDER BY / LIMIT 예제
 
 ### 3.2.1 실습용 DB/테이블 준비
