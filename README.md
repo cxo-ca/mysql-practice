@@ -1,77 +1,88 @@
-# MySQL Practice – 강의 실습 정리
+# MySQL Practice
 
-MySQL 강의를 들으면서 실습한 내용을 챕터별로 정리한 저장소입니다.  
-각 챕터는 `docs/` 폴더 아래 마크다운 문서 하나로 관리하며, 실습 코드와 설명, 셀프 체크 문제를 함께 담고 있습니다.
+MySQL 입문 강의를 들으며 SQL 기본 문법과 데이터베이스 개념을 정리한 실습 저장소입니다.
 
----
-
-## 📚 챕터 구성
-
-> 2장은 데이터 CRUD, 3장은 데이터 필터링, 4장은 데이터 집계를 다룹니다.
-
-- [CH02 – 데이터 CRUD](docs/ch02_crud.md)  
-  - `CREATE DATABASE / DROP DATABASE`
-  - 테이블 생성 (`CREATE TABLE`)
-  - 데이터 삽입 (`INSERT`)
-  - 데이터 조회 (`SELECT`)
-  - 데이터 수정 (`UPDATE`)
-  - 데이터 삭제 (`DELETE`)
-  - 테이블 삭제 (`DROP TABLE`)
-  - `starbuuks` 예제를 활용한 셀프 체크
-
-- [CH03 – 데이터 필터링](docs/ch03_filtering.md) _(작성 예정)_  
-  - 3.1 데이터 필터링이란  
-    - 데이터 필터링의 개념  
-    - 실제 서비스에서 필터링이 사용되는 예시
-  - 3.2 데이터 필터링 실습 
-    - `WHERE` 절을 이용한 조건 지정  
-    - 비교 연산자, 논리 연산자를 이용한 다양한 필터링 실습
-  - 마무리  
-    - 이번 장에서 배운 필터링 패턴 요약  
-  - 셀프체크  
-    - 직접 조건을 설계해서 원하는 데이터만 조회해 보는 연습 문제
-
-- [CH04 – 데이터 집계](docs/ch04_aggregation.md) _(작성 예정)_ 
-  - 집계 함수: `COUNT`, `SUM`, `AVG`, `MIN`, `MAX`
-  - `GROUP BY`를 이용한 그룹별 집계
-  - `HAVING` 절로 집계 결과 필터링
-  - 그룹별 정렬 및 실전 예제
-  - (필요 시) 다중 컬럼 그룹화, 중첩 집계
+이 저장소는 단순 필기용이 아니라, MySQL Workbench에서 직접 실행 가능한 SQL 예제와 복습 문제를 함께 정리하는 것을 목표로 합니다.
 
 ---
 
-## 🛠 사용 환경 (Environment)
+## 학습 흐름
 
-- DBMS: MySQL  
-- 툴: MySQL Workbench
-
-모든 예제는 MySQL Workbench 기준으로 작성되었습니다.
-
----
-
-## 🚀 실습 방법 (How to Use)
-
-1. 이 저장소에서 보고 싶은 챕터 문서를 연다.
-   - 예: `docs/ch02_crud.md`
-2. MySQL Workbench에서 새 쿼리 탭을 연다.
-3. 문서에 있는 SQL 코드 블록을 위에서부터 복사하여 붙여넣고,  
-   블록 단위로 선택하여 실행한다.  
-   - 실행 단축키: `Ctrl + Enter` (Windows), `Cmd + Enter` (macOS)
-4. 셀프체크 섹션이 있는 챕터는  
-   - 먼저 문제 요구 사항만 보고 스스로 쿼리를 작성해 본 뒤 
-   - 아래의 풀이 스크립트와 비교하면서 복습한다.
+| 순서 | 주제 | 문서 | 상태 |
+|---|---|---|---|
+| 00 | 전체 개요 | docs/00_overview.md | 완료 |
+| 01 | 데이터베이스 개요 | docs/01_database_intro.md | 완료 |
+| 02 | 데이터 CRUD | docs/02_crud.md | 완료 |
+| 03 | 데이터 필터링 | docs/03_filtering.md | 완료 |
+| 04 | 데이터 집계 | docs/04_aggregation.md | 완료 |
+| 05 | 자료형 | docs/05_data_types.md | 완료 |
+| 06 | 관계 만들기 | docs/06_relationship.md | 완료 |
+| 07 | JOIN | docs/07_join.md | 완료 |
+| 08 | 그룹화 분석 | docs/08_grouping_analysis.md | 완료 |
+| 09 | 서브쿼리 | docs/09_subquery.md | 완료 |
+| 10 | 데이터 모델링 | docs/10_modeling.md | 작성 예정 |
 
 ---
 
-## ✍️ 정리 방식
+## 폴더 구조
 
-각 챕터 문서는 공통적으로 다음 구조를 따릅니다.
+~~~text
+mysql-practice/
+├── README.md
+└── docs/
+    ├── 00_overview.md
+    ├── 01_database_intro.md
+    ├── 02_crud.md
+    ├── 03_filtering.md
+    ├── 04_aggregation.md
+    ├── 05_data_types.md
+    ├── 06_relationship.md
+    ├── 07_join.md
+    ├── 08_grouping_analysis.md
+    ├── 09_subquery.md
+    └── 10_modeling.md
+~~~
 
-- 챕터 개요: 이 챕터에서 다루는 개념과 목표
-- 실습용 DB / 테이블 스키마: 어떤 테이블을 어떻게 만드는지
-- 핵심 쿼리 예제: 수업에서 다룬 문법을 중심으로 정리
-- 셀프체크(Self Check): 스스로 풀어볼 수 있는 작은 문제
-- 전체 스크립트(Full Script): 처음부터 끝까지 실행 가능한 SQL 모음
+---
 
-이 저장소는 수업을 들으면서 작성한 SQL과 개념을 정리하고,  
-나중에 다시 봤을 때도 흐름이 바로 떠오를 수 있도록 하는 것을 목표로 합니다.
+## 사용 환경
+
+- DBMS: MySQL
+- Tool: MySQL Workbench
+- 학습 방식: 강의 내용 정리 + SQL 직접 실행 + Self Check 복습
+
+---
+
+## 문서 작성 규칙
+
+각 챕터 문서는 다음 구조를 기준으로 정리합니다.
+
+1. 학습 목표
+2. 핵심 개념
+3. 주요 문법
+4. 실습 예제
+5. 전체 실습 스크립트
+6. Self Check
+7. 정리
+
+---
+
+## 실습 방법
+
+1. `docs/`에서 학습할 챕터 문서를 읽습니다.
+2. 문서 안의 SQL 예제를 MySQL Workbench에 복사합니다.
+3. 쿼리를 블록 단위로 실행합니다.
+4. Self Check 문제를 먼저 직접 풀어봅니다.
+5. 풀이 스크립트와 비교하면서 복습합니다.
+
+---
+
+## 학습 목표
+
+이 저장소를 통해 다음 내용을 익힙니다.
+
+- 데이터베이스와 테이블의 기본 구조 이해
+- `CREATE`, `INSERT`, `SELECT`, `UPDATE`, `DELETE` 문법 학습
+- `WHERE` 조건절을 활용한 데이터 필터링
+- `COUNT`, `SUM`, `AVG`, `MIN`, `MAX`를 활용한 데이터 집계
+- `GROUP BY`, `HAVING`, `JOIN`, 서브쿼리 등 SQL 활용 문법 학습
